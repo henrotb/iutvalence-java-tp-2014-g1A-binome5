@@ -1,13 +1,17 @@
-/* TODO Javadoc */
+/**
+ * Game launcher.
+ * 
+ * @author henrotb
+ * @version 1.0.0
+ */
 public class Lab 
 {
+    /** Entry point.
+     * 
+     * @param args useless
+     */
     public static void main(String[] args) {
-    /* TODO Pourquoi ici ? */
-	boolean tableau [][];
-	
+	Plateau partie = new Plateau();
+	partie.jouer();
     }
-    /* TODO Pourquoi ici ? */
-    private int niveau;
-
-
 }
