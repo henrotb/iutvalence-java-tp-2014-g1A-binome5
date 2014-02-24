@@ -11,7 +11,7 @@ public class Lab
      * @param args useless
      */
     public static void main(String[] args) {
-	Plateau partie = new Plateau();
+	Partie partie = new Partie();
 	partie.jouer();
     }
 }
