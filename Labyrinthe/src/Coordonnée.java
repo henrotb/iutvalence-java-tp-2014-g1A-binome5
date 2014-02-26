@@ -1,5 +1,6 @@
 /* TODO Javadoc. */
 /* TODO Eviter les noms avec des accents. */
+/* TODO Pourquoi 2 classes ?? */
 public class Coordonnée 
 {
     /* TODO Est-ce que ces attributs peuvent évoluer ? Ou sont-ils fixés ? */
