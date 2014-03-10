@@ -1,13 +1,13 @@
-/* TODO Javadoc. */
+
 public class Coordonnee 
 {
     private int x;
     private int y;
-
-    public Coordonnee(int posX, int posY)
+    
+    public void Position()
     {
-	this.x=posX;
-	this.y=posY;
+	this.x=x;
+	this.y=y;
     }
     
     public int getX()
