@@ -1,10 +1,12 @@
-/** Générarateur de parties
+/** 
+ * Générarateur de parties
  * 
  * @author henrotb
  * @version 1.0.3 */
 public class Partie {
-    /**
- * 
+    
+   /**
+ * Le plateu
  */
     private final boolean plateau[][];
     /**
@@ -89,7 +91,7 @@ public class Partie {
 	for (int x = 0; x < 10; x++) {
 	    for (int y = 0; y < 10; y++) {
 		if (this.plateau[x][y])
-		    plateauLettre.append("M");
+		    plateauLettre.append("█");
 		else {
 		    if (depart.getX() == x && depart.getY() == y) {
 			plateauLettre.append("D");
@@ -99,7 +101,7 @@ public class Partie {
 			plateauLettre.append("A");
 		    } 
 			else 
-			plateauLettre.append("O");
+			plateauLettre.append(" ");
 		}
 		
 	    }
