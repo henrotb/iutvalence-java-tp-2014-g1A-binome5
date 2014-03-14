@@ -1,35 +1,37 @@
-/** 
+/* TODO Package. */
+/* TODO Javadoc. */
+/**
  * Générarateur de parties
  * 
  * @author henrotb
  * @version 1.0.3 */
 public class Partie {
-    
+
    /**
  * Le plateu
  */
     private final boolean plateau[][];
     /**
- * 
+ *
  */
     private final Coordonnee depart;
     /**
- * 
+ *
  */
     private final Coordonnee arrivee;
 
     /**
- * 
+ *
  */
     private Coordonnee joueur;
 
     /**
- * 
+ *
  */
     public Partie() {
 
 	this.plateau = new boolean[10][10];
-	
+
 	plateau[0][0] = plateau[0][1] = plateau[0][2] = plateau[0][3] = plateau[0][4] = plateau[0][5] = plateau[0][6] = plateau[0][7] = plateau[0][8] = plateau[0][9] = true;
 	
 	plateau[1][0] = plateau[1][2] = plateau[1][3] = plateau[1][9] = true;
@@ -84,6 +86,7 @@ public class Partie {
 	System.out.println(toString());
     }
 
+    /* TODO Pouvez-vous corriger l'indentation, svp ? */
     public String toString() {
 	
 	StringBuilder plateauLettre = new StringBuilder(130);
