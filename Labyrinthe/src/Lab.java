@@ -1,14 +1,15 @@
-/** Game launcher.
- * 
- * @author henrotb
- * @version 1.0.3 */
+/* TODO Package. */
+
+/**
+ * Lanceur de l'application.
+ *
+ * @author TODO (utilisez de vrais noms)
+ * @version 1.0.3
+ */
 public class Lab {
-    /** Entry point.
-     * 
-     * @param args
-     *            useless */
+    /** Point d'entree. */
     public static void main(String[] args) {
-	Partie partie = new Partie();
-	partie.jouer();
+        Partie partie = new Partie();
+        partie.jouer();
     }
 }
