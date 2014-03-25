@@ -6,7 +6,7 @@
  * @author TODO (utilisez de vrais noms)
  * @version 1.0.3
  */
-public class Coordonnee {
+public class Position {
     /** La coordonnée x. */
     private int x;
 
@@ -14,7 +14,7 @@ public class Coordonnee {
     private int y;
 
     /** Constructeur donnant un couple de coordonnées. */
-    public Coordonnee(int x, int y) {
+    public Position(int x, int y) {
 	this.x = x;
 	this.y = y;
     }
