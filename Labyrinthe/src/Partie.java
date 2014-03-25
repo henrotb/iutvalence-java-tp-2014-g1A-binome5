@@ -10,16 +10,18 @@ import java.util.Scanner;
  */
 public class Partie {
     /** Le plateau. */
-    private final boolean    plateau[][];
+    private final boolean[][]    plateau;
     /** TODO. */
-    private final Coordonnee depart;
+    private final Position depart;
     /** TODO. */
-    private final Coordonnee arrivee;
+    private final Position arrivee;
     /** TODO. */
-    private       Coordonnee joueur;
+    private       Position positionDuJoueur;
+    private MappingClavier mappingClavier;
 
     /** TODO. */
     public Partie() {
+	this.mappingClavier = new MappingClavier(new String[] {"z","s","q","d"});
         /* TODO Constantes ? */
         this.plateau = new boolean[10][10];
 
@@ -52,9 +54,9 @@ public class Partie {
 
         plateau[9][0] = plateau[9][1] = plateau[9][2] = plateau[9][3] = plateau[9][4] = plateau[9][5] = plateau[9][6] = plateau[9][7] = plateau[9][8] = plateau[9][9] = true;
 
-        this.depart = new Coordonnee(1, 1);
-        this.arrivee = new Coordonnee(2, 9);
-        this.joueur = this.depart;
+        this.depart = new Position(1, 1);
+        this.arrivee = new Position(2, 9);
+        this.positionDuJoueur = this.depart;
 
     }
 
@@ -63,34 +65,49 @@ public class Partie {
         // Afficher le labyrinthe
         System.out.println(this);
         // Saisir le mouvement.
-        Scanner scan = new Scanner(System.in);
-        int deltax;
-        int deltay;
-        String direction = scan.nextLine();
-        if (direction.equals("z")) {
-            deltax = 0;
-            deltay = -1;
+        while (true)
+        {
+            this.positionDuJoueur = positionDuJoueur.translater(this.getDirection());
+            
         }
-
-        if (direction.equals("q")) {
-            deltax = -1;
-            deltay = 0;
-        }
-
-        if (direction.equals("s")) {
-            deltax = 0;
-            deltay = 1;
-        }
-
-        if (direction.equals("d")) {
-            deltax = 1;
-            deltay = 0;
-        }
+        
+       
         // Tenter le mouvement.
         // Vérifier si mur ?
+
         // Jouer sur les booléens.
         // Mettre à jour le joueur.
         // Goto afficher.
+    }
+
+    private Direction getDirection() {
+	 Scanner scan = new Scanner(System.in);
+	 return this.mappingClavier.parseDirection(scan.nextLine());
+//	 
+//	        int deltax;
+//	        int deltay;
+//	        Position prochainCoup;
+//	        String direction = scan.nextLine();
+//	        if (direction.equals("z")) {
+//	            deltax = 0;
+//	            deltay = -1;
+//	        }
+//
+//	        if (direction.equals("q")) {
+//	            deltax = -1;
+//	            deltay = 0;
+//	        }
+//
+//	        if (direction.equals("s")) {
+//	            deltax = 0;
+//	            deltay = 1;
+//	        }
+//
+//	        if (direction.equals("d")) {
+//	            deltax = 1;
+//	            deltay = 0;
+//	        }
+//	
     }
 
     public String toString() {
@@ -107,7 +124,7 @@ public class Partie {
                             plateauLettre.append('A');
                         }
                         else {
-                            if ((joueur.getX() == x) && (joueur.getY() == y)) {
+                            if ((positionDuJoueur.getX() == x) && (positionDuJoueur.getY() == y)) {
                                 plateauLettre.append('J');
                             }
                             else { plateauLettre.append(' '); }
