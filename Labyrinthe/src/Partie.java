@@ -14,7 +14,7 @@ public class Partie {
     /** TODO. */
     private final Position arrivee;
     /** TODO. */
-    private Position positionDuJoueur;
+    private Position joueur;
     private MappingClavier mappingClavier;
 
     /** TODO. */
@@ -55,7 +55,7 @@ public class Partie {
 
 	this.depart = new Position(1, 1);
 	this.arrivee = new Position(2, 9);
-	this.positionDuJoueur = this.depart;
+	this.joueur = this.depart;
 
     }
 
@@ -64,33 +64,28 @@ public class Partie {
 	// Afficher le labyrinthe
 	System.out.println(this);
 	// Saisir le mouvement.
-	while (true) {
-	    this.positionDuJoueur = positionDuJoueur.translater(this.getDirection());
-	    System.out.println(this);
-	}
-
-	// Tenter le mouvement. done !
-	// Vérifier si mur ? en cour
 	
-	//Position prochainePosition= new Position(deltaX, delatY);
-	//prochainePosition=positionDuJoueur.translater(this.getDirection());
-	//if(plateau[prochainePosition.getX()][prochainePosition.getY()]=false)
-	//{
-	    
-	    
-	//}
-
-	// Jouer sur les booléens.done!
-	// Mettre à jour le joueur.done!
-	// Goto afficher done!
-
+	  while (true) {
+	      	    Position temporaire = joueur.translater(this.getDirection());
+	      	    if (estPositionValide(temporaire)) {
+	      		joueur = temporaire;
+	      	    }
+		    System.out.println(this);
+		    if (arrivee.comparer(joueur)) {
+			System.out.println("Win !");
+			break;
+		    }
+	  }
     }
 
+    private boolean estPositionValide(Position position) {
+	return !plateau[position.getX()][position.getY()];
+    }
+    
     private Direction getDirection() {
 	Scanner scan = new Scanner(System.in);
 	return this.mappingClavier.parseDirection(scan.nextLine());
-
-    }
+}
 
     public String toString() {
 	StringBuilder plateauLettre = new StringBuilder(130);
@@ -108,8 +103,8 @@ public class Partie {
 			    plateauLettre.append('A');
 			}
 			else {
-			    if ((positionDuJoueur.getX() == x)
-				    && (positionDuJoueur.getY() == y)) {
+			    if ((joueur.getX() == x)
+				    && (joueur.getY() == y)) {
 				plateauLettre.append('J');
 			    } 
 			    else {

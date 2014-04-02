@@ -1,4 +1,5 @@
 
+
 public class MappingClavier 
 {
     private final String[] mappings;
@@ -17,8 +18,10 @@ public class MappingClavier
 	    return Direction.GAUCHE;
 	if (nextLine.equals(this.mappings[3])) 
 	    return Direction.DROITE;
-	return null;
+	return Direction.FIXE;
     }
+    
+    
     
     
     

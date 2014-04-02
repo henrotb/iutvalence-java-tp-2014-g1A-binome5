@@ -33,4 +33,9 @@ public class Position {
     {
 	return new Position(this.x+direction.getDeltaX(), this.y+direction.getDeltaY());
     }
+    
+    public boolean comparer(Position position)  {
+	return x == position.x && y == position.y;
+    }
+
 }

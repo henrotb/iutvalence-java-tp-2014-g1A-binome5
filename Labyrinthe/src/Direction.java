@@ -1,6 +1,6 @@
 
 public enum Direction {
-    HAUT(-1,0),BAS(1,0),GAUCHE(0,-1), DROITE(0,1);
+    HAUT(-1,0),BAS(1,0),GAUCHE(0,-1), DROITE(0,1), FIXE(0,0);
     
     private final int deltaX;
     private final int deltaY;
