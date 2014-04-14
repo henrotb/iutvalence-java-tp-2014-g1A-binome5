@@ -3,7 +3,7 @@
 /**
  * Lanceur de l'application.
  *
- * @author TODO (utilisez de vrais noms)
+ * @author HENROT REYNAUD
  * @version 1.0.3
  */
 public class Lab {

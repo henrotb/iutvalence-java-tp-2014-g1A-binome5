@@ -1,28 +1,31 @@
+import java.util.HashMap;
+import java.util.Map;
 
+/**
+ * Définition des touches directionnelles.
+ * 
+ *
+ * @author HENROT REYNAUD
+ * @version 1.0.3
+ */
 
 public class MappingClavier 
 {
-    private final String[] mappings;
+    private final Map<String, Direction> mappings;
 
-    public MappingClavier(String[] mappings) {
-	super();
-	this.mappings = mappings;
+    public MappingClavier() {
+	this.mappings = new HashMap<String, Direction>(4);
+	mappings.put("z", Direction.HAUT);
+	mappings.put("q", Direction.GAUCHE);
+	mappings.put("s", Direction.BAS);
+	mappings.put("d", Direction.DROITE);
+	mappings.put("droite", Direction.DROITE);
+	mappings.put("gauche", Direction.GAUCHE);
+	
     }
 
     public Direction parseDirection(String nextLine) {
-	if (nextLine.equals(this.mappings[0])) 
-	    return Direction.HAUT;
-	if (nextLine.equals(this.mappings[1])) 
-	    return Direction.BAS;
-	if (nextLine.equals(this.mappings[2])) 
-	    return Direction.GAUCHE;
-	if (nextLine.equals(this.mappings[3])) 
-	    return Direction.DROITE;
-	return Direction.FIXE;
+	Direction dir = mappings.get(nextLine);
+	return dir == null ? Direction.FIXE : dir;
     }
-    
-    
-    
-    
-    
 }
