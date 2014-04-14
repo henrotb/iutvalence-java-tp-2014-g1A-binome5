@@ -22,7 +22,7 @@ public class Partie {
     /** Appel du mapping des touches. */
     private MappingClavier mappingClavier;
    
-    /** TODO. */ 
+    /** Constructeur d'une partie. */ 
     public Partie() {
 	this.mappingClavier = new MappingClavier();
 	GenerateurPlateau generateur = new GenerateurPlateauFixe(NB_LIGNES, NB_COLONNES);

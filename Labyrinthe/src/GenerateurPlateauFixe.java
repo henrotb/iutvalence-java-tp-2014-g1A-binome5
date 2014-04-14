@@ -1,39 +1,42 @@
-
+/** Générarateur de plateaux.
+ * 
+ * @author HENROT REYNAUD
+ * @version 1.0.3 */
 public class GenerateurPlateauFixe implements GenerateurPlateau {
-    /** TODO. */
+    /** Nombre de colonnes par défaut. */
     private static final int NB_COLONNES = 10;
-    /** TODO. */
+    /** Nombre de lignes par défaut. */
     private static final int NB_LIGNES = 10;
     /** Le plateau. */
     private boolean[][] plateau;
-    /** TODO. */
+    /** Position du départ du joueur.*/
     private Position depart;
-    /** TODO. */
+    /** Position d'arrivée du joueur. */
     private Position arrivee;
  
-    
+    /** Retourne la postion de départ. */
     public Position depart(){
 	return this.depart;
 	
     }
     
-    /** TODO. */
+    /** @return Retourne la postion d'arrivée. */
     public Position arrivee(){
    	return this.arrivee;
    	
        }
     
-    /** TODO. */  
+    /** @return Retourne le nouveau plateau. */  
     public boolean[][] plateau() {
 	return plateau;
     }
     
-    /** TODO. */
+    /** Constructeur d'un nouveau plateau. */
     public GenerateurPlateauFixe(int ligne, int colonne){
 	this.plateau = new boolean[NB_LIGNES][NB_COLONNES];
     }
     
-    /** TODO. */
+    /** Méthode de génération du plateau fixe. */
     public void generer() {
 
 

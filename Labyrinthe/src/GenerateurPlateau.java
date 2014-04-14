@@ -15,7 +15,7 @@ public interface GenerateurPlateau {
 
     Position arrivee();
 
-    /** TODO. */
+    
 
     
 }

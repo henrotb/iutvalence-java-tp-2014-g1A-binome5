@@ -1,4 +1,4 @@
-/* TODO Package. */
+
 
 /**
  * Définition d'une position.
@@ -28,12 +28,12 @@ public class Position {
     public int getY() {
 	return this.y;
     }
-
+    /** @return Retourne la nouvelle position du joueur après un déplacement. */
     public Position translater(Direction direction) 
     {
 	return new Position(this.x+direction.getDeltaX(), this.y+direction.getDeltaY());
     }
-    
+    /** @return Compare la position du joueur et sa future position. */
     public boolean comparer(Position position)  {
 	return x == position.x && y == position.y;
     }
